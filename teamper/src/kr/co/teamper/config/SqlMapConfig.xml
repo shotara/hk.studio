@@ -28,9 +28,9 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://890313.com:3306/honbabin?characterEncoding=UTF-8"/>
-				<property name="username" value="honbabin" />
-				<property name="password" value="ghsqkqdls!@34" />
+				<property name="url" value="a"/>
+				<property name="username" value="a" />
+				<property name="password" value="a" />
 			</dataSource>
 		</environment>
 	</environments>
