@@ -11,6 +11,15 @@
 		<url-pattern>/member</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>TeamView</servlet-name>
+		<servlet-class>kr.co.teamper.view.TeamView</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TeamView</servlet-name>
+		<url-pattern>/teamr</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>main</welcome-file>
 	</welcome-file-list>

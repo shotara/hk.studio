@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+			
+<mapper namespace="member">
+
+	<select id="getMember" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Member">
+		SELECT * FROM tp_member WHERE tpMemberEmail=#{memberEmail} AND tpMemberPassword='${memberPassword}'
+	</select>
+	
+</mapper>
