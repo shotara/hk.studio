@@ -28,4 +28,10 @@ public class MemberDAO {
 		}
 	}
 
+	public static void addMember(String inputMemberEmail, String inputMemberName, String encryptMemberPassword,
+			long inputCurrentTime) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
