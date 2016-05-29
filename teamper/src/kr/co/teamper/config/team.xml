@@ -7,8 +7,5 @@
 	<select id="addTeam" parameterType="java.util.HashMap" resultType="int">
 		INSERT INTO tp_team(tpMemberNo, tpTeamName, tpTeamInfo, tpTeamCreateTime) VALUES(#{memberNo}, #{teamName}, #{teamInfo}, #{teamCurrentTime})
 	</select>
-	
-	
-	
-	
+
 </mapper>

@@ -25,7 +25,5 @@ public class TeamDAO {
 		} finally {
 			sqlSession.close();
 		}
-
 	}
-
 }

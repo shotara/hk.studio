@@ -1,5 +1,4 @@
 package kr.co.teamper.view;
-
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -11,48 +10,39 @@ import kr.co.teamper.controller.MemberController;
 
 public class MemberView {
 
-public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-	service(req, res);
-}
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		service(req, res);
+	}
 
-public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-	service(req, res);
-}
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		service(req, res);
+	}
 
-public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-	
+	// doGet, doPost로 받은 request를 service로 보내준다.
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+
 		req.setCharacterEncoding("UTF-8");
-		try{
+		try {
+			// action에 있는 파라미터를 변수에 넣고 스위치문으로 컨트롤러를 호출한다.
 			String action = req.getParameter("action").toString();
-			
-			HashMap<String, String> map = new HashMap<String, String>();
-			map.put("USER-IP", req.getRemoteAddr());
-			
-			switch(action) {
-				case "checkMember":
-					map.put("ACTION", "checkMember");
-					MemberController.checkMember(req, res);
-					break;
-				case "joinMember":
-					map.put("ACTION", "joinMember");
-					MemberController.joinMember(req, res);
-					break;
-				case "loginMember":
-					map.put("ACTION", "loginMember");
-					MemberController.loginMember(req, res);	
-					break;
-				case "logoutMember":
-					map.put("ACTION", "logoutMember");
-					MemberController.logoutMember(req, res);
-					break;
-				case "getMember":
-					map.put("ACTION", "getMember");
-					MemberController.getMember(req, res);
-					break;
-				default:
+
+			switch (action) {
+			case "joinMember":
+				MemberController.joinMember(req, res);
+				break;
+			case "loginMember":
+				MemberController.loginMember(req, res);
+				break;
+			case "logoutMember":
+				MemberController.logoutMember(req, res);
+				break;
+			case "getMember":
+				MemberController.getMember(req, res);
+				break;
+			default:
 			}
-		}  catch(Exception e) {
-			req.getRequestDispatcher("/02_page/error.jsp").forward(req, res);				
-		}			
+		} catch (Exception e) {
+			req.getRequestDispatcher("/page/error.jsp").forward(req, res);
+		}
 	}
 }

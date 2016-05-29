@@ -17,19 +17,11 @@ import kr.co.teamper.model.MemberDAO;
 import kr.co.teamper.model.domain.Member;
 import kr.co.teamper.util.EncryptUtil;
 
-
-
 public class MemberController {
 
-	public static void checkMember(HttpServletRequest req, HttpServletResponse res) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	// 회원가입
 	public static void joinMember(HttpServletRequest req, HttpServletResponse res) {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("USER-IP", req.getRemoteAddr());
-		
+
 		try {
 			
 			String inputMemberEmail = req.getParameter("inputMemberEmail") != null ? req.getParameter("inputMemberEmail").toString() : "";
@@ -47,7 +39,6 @@ public class MemberController {
 			
 			//필수입력 체크
 			if(inputMemberEmail.equals("")||inputMemberPassword.equals("")){
-				
 				System.out.println("필수입력란 미입력.");	
 				return;
 			}
@@ -55,47 +46,33 @@ public class MemberController {
 			// 이메일 중복여부 체크
 			Member checkMember = MemberDAO.getMember(inputMemberEmail, encryptMemberPassword);
 			if(!checkMember.getTpMemberEmail().equals("")){
-				
 				System.out.println("이미 존재하는 회원입니다.");
 				return;
 			}
 			
-			// 아이디 혹은 비밀번호가
+			// 비밀번호와 비밀번호 확인이 일치하지 않습니다.
 			if(!inputMemberPassword.equals(inputMemberPasswordConfirm)) {
-				System.out.println("비밀번호가 비밀번호 확인과 일치하지 않습니다.");
+				System.out.println("비밀번호와 비밀번호 확인과 일치하지 않습니다.");
 				return;
 			}
-	
 			
+			// DB에 회원 추가
 			if(MemberDAO.addMember(inputMemberEmail, inputMemberName, encryptMemberPassword ,inputMemberInfo, inputCurrentTime)!=1){
 				System.out.println("DB ERROR");
 				return;
 			}
-			
 		
+			// 추가된 회원의 정보를 가져온다.
 			Member getMember = MemberDAO.getMember(inputMemberEmail, encryptMemberPassword);
 			
-			if(!inputMemberTimeTable1.equals("")){
-					
-				setTimeTable(getMember.getTpMembeNo() ,1 ,inputMemberTimeTable1);			
-			}
-			if(!inputMemberTimeTable2.equals("")){
-				
-				setTimeTable(getMember.getTpMembeNo() ,2, inputMemberTimeTable2);			
-			}
-			if(!inputMemberTimeTable3.equals("")){
-				
-				setTimeTable(getMember.getTpMembeNo() ,3, inputMemberTimeTable3);			
-			}
-			if(!inputMemberTimeTable4.equals("")){
-				
-				setTimeTable(getMember.getTpMembeNo() ,4, inputMemberTimeTable4);			
-			}
-			if(!inputMemberTimeTable5.equals("")){
-				
-				setTimeTable(getMember.getTpMembeNo() ,5, inputMemberTimeTable5);			
-			}
-			
+			// 시간표 입력
+			if(!inputMemberTimeTable1.equals("")) setTimeTable(getMember.getTpMembeNo() ,1 ,inputMemberTimeTable1);			
+			if(!inputMemberTimeTable2.equals("")) setTimeTable(getMember.getTpMembeNo() ,2, inputMemberTimeTable2);			
+			if(!inputMemberTimeTable3.equals("")) setTimeTable(getMember.getTpMembeNo() ,3, inputMemberTimeTable3);			
+			if(!inputMemberTimeTable4.equals("")) setTimeTable(getMember.getTpMembeNo() ,4, inputMemberTimeTable4);			
+			if(!inputMemberTimeTable5.equals("")) setTimeTable(getMember.getTpMembeNo() ,5, inputMemberTimeTable5);					
+
+			// index.jsp로 리턴
 			return;
 		
 		} catch(Exception e) {
@@ -103,6 +80,7 @@ public class MemberController {
 		}
 	}
 
+	// 입력된 요일과 시간표를 DB에 입력한다.
 	private static void setTimeTable(int tpMemberNo, int i, String inputMemberTimeTable) {
 		
 		String temp;
@@ -123,12 +101,8 @@ public class MemberController {
 		}
 	}
 
-
-
+	// 로그인한다
 	public static void loginMember(HttpServletRequest req, HttpServletResponse res) {
-		
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("USER-IP", req.getRemoteAddr());
 		
 		try {
 			HttpSession session = req.getSession();
@@ -143,7 +117,7 @@ public class MemberController {
 			
 			// 아이디 혹은 비밀번호가 일치하지 않는 경우
 			if(checkMember==null) {
-				System.out.println("아이디 혹은 패스워드가 없습니다.");
+				System.out.println("아이디 혹은 패스워드가 일치하지 않습니다.");
 				return;
 			}
 			
@@ -154,7 +128,9 @@ public class MemberController {
 			session.setAttribute("tpMemberName", checkMember.getTpMemberName());
 			session.setAttribute("tpMemberIntro", checkMember.getTpMemberIntro());
 
+			// index.jsp로 리턴
 			return;
+			
 		
 		} catch(Exception e) {
 			e.printStackTrace();
