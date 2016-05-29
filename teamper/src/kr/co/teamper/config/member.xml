@@ -8,4 +8,11 @@
 		SELECT * FROM tp_member WHERE tpMemberEmail=#{memberEmail} AND tpMemberPassword='${memberPassword}'
 	</select>
 	
+	<select id="addMember" parameterType="java.util.HashMap" resultType="int">
+		INSERT INTO tp_member(tpMemberEmail, tpMemberName, tpMemberPassword, tpMemberCreateTime, tpMemberInfo) VALUES(#{memberEmail}, #{memberName}, #{memberPassword}, #{memberCurrentTime}, #{memberInfo})
+	</select>
+	
+	
+	
+	
 </mapper>

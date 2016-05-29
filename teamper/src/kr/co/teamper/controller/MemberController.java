@@ -67,28 +67,33 @@ public class MemberController {
 			}
 	
 			
-			MemberDAO.addMember(inputMemberEmail, inputMemberName, encryptMemberPassword, inputCurrentTime);
+			if(MemberDAO.addMember(inputMemberEmail, inputMemberName, encryptMemberPassword ,inputMemberInfo, inputCurrentTime)!=1){
+				System.out.println("DB ERROR");
+				return;
+			}
 			
 		
+			Member getMember = MemberDAO.getMember(inputMemberEmail, encryptMemberPassword);
+			
 			if(!inputMemberTimeTable1.equals("")){
 					
-				setTimeTable(1, inputMemberTimeTable1);			
+				setTimeTable(getMember.getTpMembeNo() ,1 ,inputMemberTimeTable1);			
 			}
 			if(!inputMemberTimeTable2.equals("")){
 				
-				setTimeTable(2, inputMemberTimeTable2);			
+				setTimeTable(getMember.getTpMembeNo() ,2, inputMemberTimeTable2);			
 			}
 			if(!inputMemberTimeTable3.equals("")){
 				
-				setTimeTable(3, inputMemberTimeTable3);			
+				setTimeTable(getMember.getTpMembeNo() ,3, inputMemberTimeTable3);			
 			}
 			if(!inputMemberTimeTable4.equals("")){
 				
-				setTimeTable(4, inputMemberTimeTable4);			
+				setTimeTable(getMember.getTpMembeNo() ,4, inputMemberTimeTable4);			
 			}
 			if(!inputMemberTimeTable5.equals("")){
 				
-				setTimeTable(5, inputMemberTimeTable5);			
+				setTimeTable(getMember.getTpMembeNo() ,5, inputMemberTimeTable5);			
 			}
 			
 			return;
@@ -98,17 +103,27 @@ public class MemberController {
 		}
 	}
 
-	private static void setTimeTable(int i, String inputMemberTimeTable) {
+	private static void setTimeTable(int tpMemberNo, int i, String inputMemberTimeTable) {
+		
+		String temp;
+		String startTime;
+		String endTime;
 		
 		StringTokenizer st = new StringTokenizer(inputMemberTimeTable,";");
 		while(st.hasMoreTokens()){
 			
+			temp = st.nextToken();
 			
+			StringTokenizer st2 = new StringTokenizer(temp,"~");
+			startTime = st2.nextToken();
+			endTime = st2.nextToken();
 			
+			MemberDAO.addMemberTimeTable(tpMemberNo, i, startTime, endTime);
 			
 		}
-	
 	}
+
+
 
 	public static void loginMember(HttpServletRequest req, HttpServletResponse res) {
 		
