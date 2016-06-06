@@ -3,7 +3,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
 			
 <mapper namespace="member">
-
+    
+	<select id="checkMember" parameterType="java.util.HashMap" resultType="int">
+		SELECT count(*) FROM tp_member WHERE tpMemberEmail=#{memberEmail} 
+	</select>
+	
 	<select id="getMember" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Member">
 		SELECT * FROM tp_member WHERE tpMemberEmail=#{memberEmail} AND tpMemberPassword='${memberPassword}'
 	</select>
@@ -13,7 +17,7 @@
 	</select>
 		
 	<select id="addMember" parameterType="java.util.HashMap" resultType="int">
-		INSERT INTO tp_member(tpMemberEmail, tpMemberName, tpMemberPassword, tpMemberCreateTime, tpMemberIntro) VALUES(#{memberEmail}, #{memberName}, #{memberPassword}, #{memberCurrentTime}, #{memberIntro})
+		INSERT INTO tp_member(tpMemberEmail, tpMemberName, tpMemberPassword, tpMemberIntro, tpMemberCreateDate) VALUES(#{memberEmail}, #{memberName}, #{memberPassword}, #{memberIntro},#{memberCreateDate})
 	</select>
 
 	<select id="addMemberTimeTable" parameterType="java.util.HashMap" resultType="int">

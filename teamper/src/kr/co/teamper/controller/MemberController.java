@@ -43,8 +43,9 @@ public class MemberController {
 			}
 			
 			// 이메일 중복여부 체크
-			Member checkMember = MemberDAO.getMember(inputMemberEmail, encryptMemberPassword);
-			if(!checkMember.getTpMemberEmail().equals("")){
+			int checkMember = MemberDAO.checkMember(inputMemberEmail);
+			System.out.println(checkMember);
+			if(checkMember==1) {
 				System.out.println("이미 존재하는 회원입니다.");
 				return;
 			}
@@ -71,6 +72,7 @@ public class MemberController {
 			if(!inputMemberTimeTable4.equals("")) setTimeTable(getMember.getTpMembeNo() ,4, inputMemberTimeTable4);			
 			if(!inputMemberTimeTable5.equals("")) setTimeTable(getMember.getTpMembeNo() ,5, inputMemberTimeTable5);					
 
+			System.out.println("회원가입이 완료되었습니다.");
 			// index.jsp로 리턴
 			return;
 		
@@ -129,6 +131,8 @@ public class MemberController {
 			session.setAttribute("tpMemberName", checkMember.getTpMemberName());
 			session.setAttribute("tpMemberIntro", checkMember.getTpMemberIntro());
 
+			
+			System.out.println("로그인되었습니다.");
 			// index.jsp로 리턴
 			return;
 			
@@ -171,7 +175,7 @@ public class MemberController {
 			// 추가된 회원의 정보를 가져온다.
 			Member getMember = MemberDAO.getMemberByMemberNo(inputMemberNo);
 
-
+			System.out.println(getMember);
 			// index.jsp로 리턴
 			return;
 		

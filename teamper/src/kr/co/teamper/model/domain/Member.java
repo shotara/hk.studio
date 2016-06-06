@@ -8,6 +8,7 @@ public class Member {
 	private String tpMemberPassword;
 	private String tpMemberPhone;
 	private String tpMemberIntro;
+	private long tpMemberCreateDate;
 	public Member() {
 		super();
 	}
@@ -47,8 +48,14 @@ public class Member {
 	public void setTpMemberIntro(String tpMemberIntro) {
 		this.tpMemberIntro = tpMemberIntro;
 	}
+	public long getTpMemberCreateDate() {
+		return tpMemberCreateDate;
+	}
+	public void setTpMemberCreateDate(long tpMemberCreateDate) {
+		this.tpMemberCreateDate = tpMemberCreateDate;
+	}
 	public Member(int tpMembeNo, String tpMemberEmail, String tpMemberName, String tpMemberPassword,
-			String tpMemberPhone, String tpMemberIntro) {
+			String tpMemberPhone, String tpMemberIntro, long tpMemberCreateDate) {
 		super();
 		this.tpMembeNo = tpMembeNo;
 		this.tpMemberEmail = tpMemberEmail;
@@ -56,6 +63,7 @@ public class Member {
 		this.tpMemberPassword = tpMemberPassword;
 		this.tpMemberPhone = tpMemberPhone;
 		this.tpMemberIntro = tpMemberIntro;
+		this.tpMemberCreateDate = tpMemberCreateDate;
 	}
 
 }

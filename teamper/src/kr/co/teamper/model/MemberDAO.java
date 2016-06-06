@@ -27,7 +27,21 @@ public class MemberDAO {
 			sqlSession.close();
 		}
 	}
-
+	
+	public static int checkMember(String inputMemberEmail) {
+		
+		SqlSession sqlSession = DAOFactory.getSqlSession(true);
+		
+		try {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("memberEmail", inputMemberEmail);
+		    
+		    return (int)sqlSession.selectOne(namespace + ".checkMember", map);
+		    
+		} finally {
+			sqlSession.close();
+		}
+	}
 	public static int addMember(String inputMemberEmail, String inputMemberName, String encryptMemberPassword,
 			String inputMemberIntro, long inputCurrentTime) {
 	
@@ -39,7 +53,7 @@ public class MemberDAO {
 		    map.put("memberPassword", encryptMemberPassword);
 		    map.put("memberName", inputMemberName);
 		    map.put("memberIntro", inputMemberIntro);
-		    map.put("memberCurrentTime", inputCurrentTime);
+		    map.put("memberCreateDate", inputCurrentTime);
 		    
 		    check = (int)sqlSession.insert(namespace + ".addMember", map);
 		    if(check==1) {

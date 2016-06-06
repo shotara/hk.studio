@@ -67,7 +67,7 @@ public class TeamController {
 			req.setAttribute("outputTeamNo", team.getTpTeamNo());				
 			req.setAttribute("outputTeamName", team.getTpTeamName());				
 			req.setAttribute("outputTeamInfo", team.getTpTeamInfo());				
-			req.setAttribute("outputTeamLeader", team.getTpTeamLeader());				
+			req.setAttribute("outputMemberNo", team.getTpMemberNo());				
 
 			// 팀 바를 표시한다. 없으면 생성해야한다.
 			ArrayList<TeamBar> teamBarList = new ArrayList<TeamBar>(); 

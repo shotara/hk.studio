@@ -43,6 +43,7 @@ public class MemberView extends HttpServlet {
 			default:
 			}
 		} catch (Exception e) {
+			System.out.println("error");
 			req.getRequestDispatcher("/page/error.jsp").forward(req, res);
 		}
 	}
