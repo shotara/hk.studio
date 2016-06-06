@@ -29,29 +29,68 @@ public class MemberDAO {
 	}
 
 	public static int addMember(String inputMemberEmail, String inputMemberName, String encryptMemberPassword,
-			String inputMemberInfo, long inputCurrentTime) {
+			String inputMemberIntro, long inputCurrentTime) {
 	
-		SqlSession sqlSession = DAOFactory.getSqlSession(true);
-		
+		SqlSession sqlSession = DAOFactory.getSqlSession(false);
+		int check = 0;
 		try {
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("memberEmail", inputMemberEmail);
 		    map.put("memberPassword", encryptMemberPassword);
 		    map.put("memberName", inputMemberName);
-		    map.put("memberInfo", inputMemberInfo);
+		    map.put("memberIntro", inputMemberIntro);
 		    map.put("memberCurrentTime", inputCurrentTime);
-
 		    
-		    return (int)sqlSession.insert(namespace + ".addMember", map);
+		    check = (int)sqlSession.insert(namespace + ".addMember", map);
+		    if(check==1) {
+		    	sqlSession.commit();
+		    	return check;
+		    } else {
+		    	sqlSession.rollback();
+		    	return check;
+		    }
 		    
 		} finally {
 			sqlSession.close();
 		}
-	
 	}
 
-	public static void addMemberTimeTable(int tpMemberNo, int i, String startTime, String endTime) {
-		// TODO Auto-generated method stub
+	public static boolean addMemberTimeTable(int tpMemberNo, int inputDay, String startTime, String endTime) {
 		
+		SqlSession sqlSession = DAOFactory.getSqlSession(false);
+		int check = 0;
+		try {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("memberNo", tpMemberNo);
+		    map.put("inputDay", inputDay);
+		    map.put("startTime", startTime);
+		    map.put("endTime", endTime);
+		    
+		    check = (int)sqlSession.insert(namespace + ".addMemberTimeTable", map);
+		    if(check==1) {
+		    	sqlSession.commit();
+		    	return true;
+		    } else {
+		    	sqlSession.rollback();
+		    	return false;
+		    }
+		} finally {
+			sqlSession.close();
+		}
+	}
+
+	public static Member getMemberByMemberNo(int inputMemberNo) {
+		
+		SqlSession sqlSession = DAOFactory.getSqlSession(true);
+		
+		try {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("memberNo", inputMemberNo);
+		    
+		    return (Member)sqlSession.selectOne(namespace + ".getMemberByMemberNo", map);
+		    
+		} finally {
+			sqlSession.close();
+		}
 	}
 }

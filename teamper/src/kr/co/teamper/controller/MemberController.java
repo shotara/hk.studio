@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
-
 import kr.co.teamper.model.MemberDAO;
 import kr.co.teamper.model.domain.Member;
 import kr.co.teamper.util.EncryptUtil;
@@ -29,7 +28,7 @@ public class MemberController {
 			String inputMemberPasswordConfirm = req.getParameter("inputMemberPasswordConfirm") != null ? req.getParameter("inputMemberPasswordConfirm").toString() : "";
 			String encryptMemberPassword = EncryptUtil.testMD5(inputMemberPassword);
 			String inputMemberName = req.getParameter("inputMemberName") != null ? req.getParameter("inputMemberName").toString() : "";
-			String inputMemberInfo = req.getParameter("inputMemberInfo") != null ? req.getParameter("inputMemberInfo").toString() : "";
+			String inputMemberIntro = req.getParameter("inputMemberIntro") != null ? req.getParameter("inputMemberIntro").toString() : "";
 			String inputMemberTimeTable1 = req.getParameter("inputMemberTimeTable1")!= null ? req.getParameter("inputMemberTimeTable1").toString() : "";
 			String inputMemberTimeTable2 = req.getParameter("inputMemberTimeTable1")!= null ? req.getParameter("inputMemberTimeTable2").toString() : "";
 			String inputMemberTimeTable3 = req.getParameter("inputMemberTimeTable1")!= null ? req.getParameter("inputMemberTimeTable3").toString() : "";
@@ -57,7 +56,7 @@ public class MemberController {
 			}
 			
 			// DB에 회원 추가
-			if(MemberDAO.addMember(inputMemberEmail, inputMemberName, encryptMemberPassword ,inputMemberInfo, inputCurrentTime)!=1){
+			if(MemberDAO.addMember(inputMemberEmail, inputMemberName, encryptMemberPassword ,inputMemberIntro, inputCurrentTime)!=1){
 				System.out.println("DB ERROR");
 				return;
 			}
@@ -81,7 +80,7 @@ public class MemberController {
 	}
 
 	// 입력된 요일과 시간표를 DB에 입력한다.
-	private static void setTimeTable(int tpMemberNo, int i, String inputMemberTimeTable) {
+	private static void setTimeTable(int tpMemberNo, int inputDay, String inputMemberTimeTable) {
 		
 		String temp;
 		String startTime;
@@ -96,7 +95,9 @@ public class MemberController {
 			startTime = st2.nextToken();
 			endTime = st2.nextToken();
 			
-			MemberDAO.addMemberTimeTable(tpMemberNo, i, startTime, endTime);
+			if(!MemberDAO.addMemberTimeTable(tpMemberNo, inputDay, startTime, endTime)) {
+				System.out.println("DB ERROR - "+inputDay);
+			}
 			
 		}
 	}
@@ -138,13 +139,45 @@ public class MemberController {
 	}
 
 	public static void logoutMember(HttpServletRequest req, HttpServletResponse res) {
-		// TODO Auto-generated method stub
 		
+		try {
+			HttpSession session = req.getSession(false);
+			
+			if(session == null) {
+				System.out.println("이미 로그아웃 되있습니다.");
+				return;
+			}
+			
+			session.invalidate();
+			
+			res.getWriter().write("LogoutOK");
+	
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void getMember(HttpServletRequest req, HttpServletResponse res) {
-		// TODO Auto-generated method stub
+
+		try {
+			int inputMemberNo = req.getParameter("inputMemberNo") != null ? Integer.parseInt(req.getParameter("inputMemberNo").toString()) : 0;
+			
+			//필수입력 체크
+			if(inputMemberNo==0){
+				System.out.println("필수입력란 미입력.");	
+				return;
+			}
+
+			// 추가된 회원의 정보를 가져온다.
+			Member getMember = MemberDAO.getMemberByMemberNo(inputMemberNo);
+
+
+			// index.jsp로 리턴
+			return;
 		
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

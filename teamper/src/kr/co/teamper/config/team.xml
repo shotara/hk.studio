@@ -8,4 +8,29 @@
 		INSERT INTO tp_team(tpMemberNo, tpTeamName, tpTeamInfo, tpTeamCreateTime) VALUES(#{memberNo}, #{teamName}, #{teamInfo}, #{teamCurrentTime})
 	</select>
 
+	<select id="viewTeam" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Team">
+		SELECT * FROM tp_team WHERE tpMemberNo = #{memberNo}
+	</select>	
+	
+	<select id="getTeamBar" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.TeamBar">
+		SELECT * FROM tp_team_bar WHERE tpMemberNo = #{memberNo} AND tpTeamNo=#{teamNo}
+	</select>		
+	
+	<select id="getTeamBarDetail" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.TeamBarDetail">
+		SELECT * FROM tp_team_bar_detail WHERE tpMemberNo = #{memberNo} AND tpTeamNo=#{teamNo}
+	</select>
+				
+	<select id="addTeamBar" parameterType="java.util.HashMap" resultType="int">
+		INSERT INTO tp_team_bar(tpMemberNo, tpTeamNo, tpTeamBarName, tpTeamBarSize, tpTeamBarPercent, tpTeamBarCreateDate) VALUES(#{memberNo}, #{teamNo}, #{teamBarName}, #{teamBarSize}, #{teamBarPercent}, #{inputCurrentTime})
+	</select>
+	
+	<select id="addTeamBarDetail" parameterType="java.util.HashMap" resultType="int">
+		INSERT INTO tp_team_bar_detail(tpTeamBarNo, tpTeamBarDetailStatus, tpMemberNo, tpTeamBarDetailContent) VALUES(#{teamBarNo}, #{teamBarDetailStatus}, #{memberNo}, #{teamBarDetailContent})
+	</select>
+	
+	<select id="setTeamBarDetail" parameterType="java.util.HashMap" resultType="int">
+		UPDATE tp_team_bar_detail SET tpTeamBarDetailStatus=#{teamBarDetailStatus} WHERE tpMemberNo = #{memberNo} AND tpTeamBarDetailNo=#{teamBarDetailNo}
+	</select>
+		
+		
 </mapper>

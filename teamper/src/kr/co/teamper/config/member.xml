@@ -7,9 +7,16 @@
 	<select id="getMember" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Member">
 		SELECT * FROM tp_member WHERE tpMemberEmail=#{memberEmail} AND tpMemberPassword='${memberPassword}'
 	</select>
-	
+
+	<select id="getMemberByMemberNo" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Member">
+		SELECT * FROM tp_member WHERE tpMemberNo=#{memberNo}
+	</select>
+		
 	<select id="addMember" parameterType="java.util.HashMap" resultType="int">
-		INSERT INTO tp_member(tpMemberEmail, tpMemberName, tpMemberPassword, tpMemberCreateTime, tpMemberInfo) VALUES(#{memberEmail}, #{memberName}, #{memberPassword}, #{memberCurrentTime}, #{memberInfo})
+		INSERT INTO tp_member(tpMemberEmail, tpMemberName, tpMemberPassword, tpMemberCreateTime, tpMemberIntro) VALUES(#{memberEmail}, #{memberName}, #{memberPassword}, #{memberCurrentTime}, #{memberIntro})
 	</select>
 
+	<select id="addMemberTimeTable" parameterType="java.util.HashMap" resultType="int">
+		INSERT INTO tp_member_timetable(tpMemberNo, tpMemberTimetableWeekday, tpMemberTimetableStart, tpMemberTimetableEnd) VALUES(#{memberNo}, #{inputDay}, #{startTime}, #{endTime})
+	</select>
 </mapper>

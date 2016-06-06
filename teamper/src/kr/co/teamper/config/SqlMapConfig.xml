@@ -5,22 +5,8 @@
 <configuration>
 
     <typeAliases>
-		<typeAlias type="com.honbabin.model.domain.Board" alias="board"/>
-		<typeAlias type="com.honbabin.model.domain.MeetingEpilogue" alias="epilogue"/>
-		<typeAlias type="com.honbabin.model.domain.Follow" alias="follow"/>
-		<typeAlias type="com.honbabin.model.domain.Meeting" alias="meeting"/>		
-		<typeAlias type="com.honbabin.model.domain.Member" alias="member"/>
-		<typeAlias type="com.honbabin.model.domain.Mileage" alias="mileage"/>
-		<typeAlias type="com.honbabin.model.domain.Payment" alias="payment"/>
-		<typeAlias type="com.honbabin.model.domain.Place" alias="place"/>
-		<typeAlias type="com.honbabin.model.domain.Univ" alias="univ"/>		
-		<typeAlias type="com.honbabin.model.domain.Refund" alias="refund"/>
-		<typeAlias type="com.honbabin.model.domain.Item" alias="item"/>
-		<typeAlias type="com.honbabin.model.domain.Upload" alias="upload"/>
-		<typeAlias type="com.honbabin.model.domain.Flashing" alias="flashing"/>
-		<typeAlias type="com.honbabin.model.domain.Zone" alias="zone"/>
-		<typeAlias type="com.honbabin.model.domain.Food" alias="food"/>
-		<typeAlias type="com.honbabin.model.domain.Notice" alias="notice"/>	
+		<typeAlias type="kr.co.teamper.model.domain.Member" alias="member"/>
+		<typeAlias type="kr.co.teamper.model.domain.Team" alias="team"/>	
 	</typeAliases>
 	
 	<environments default="env">
@@ -30,28 +16,14 @@
 				<property name="driver" value="com.mysql.jdbc.Driver" />
 				<property name="url" value="jdbc:mysql://hkstudio.cd2qpk4u2ykc.ap-northeast-2.rds.amazonaws.com:3306/hkstudio?characterEncoding=UTF-8"/>
 				<property name="username" value="teamper" />
-				<property name="password" value="xlavj12!" />
+				<property name="password" value="gksrla12" />
 			</dataSource>
 		</environment>
 	</environments>
 
 	<mappers>
-		<mapper resource="com/honbabin/config/board.xml" />
-		<mapper resource="com/honbabin/config/epilogue.xml" />
-		<mapper resource="com/honbabin/config/follow.xml" />
-		<mapper resource="com/honbabin/config/meeting.xml" />
-		<mapper resource="com/honbabin/config/member.xml" />
-		<mapper resource="com/honbabin/config/mileage.xml" />
-		<mapper resource="com/honbabin/config/payment.xml" />
-		<mapper resource="com/honbabin/config/place.xml" />
-		<mapper resource="com/honbabin/config/univ.xml" />
-		<mapper resource="com/honbabin/config/refund.xml" />
-		<mapper resource="com/honbabin/config/item.xml" />
-		<mapper resource="com/honbabin/config/upload.xml" />
-		<mapper resource="com/honbabin/config/flashing.xml" />
-		<mapper resource="com/honbabin/config/zone.xml" />
-		<mapper resource="com/honbabin/config/food.xml" />
-		<mapper resource="com/honbabin/config/notice.xml" />		
+		<mapper resource="kr/co/teamper/config/team.xml" />
+		<mapper resource="kr/co/teamper/config/member.xml" />
 	</mappers>
 
 </configuration>

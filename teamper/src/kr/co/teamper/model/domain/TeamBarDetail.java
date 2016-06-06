@@ -1,52 +1,54 @@
 package kr.co.teamper.model.domain;
 
 public class TeamBarDetail {
-	private int TeamBarNo;
-	private int TeamBarDetailNo;
-	private String TeamBarDetailWorker;
-	private String TeamBarDetailContent;
-	private boolean TeamBarDetailsWorked;
+	private int tpTeamBarDetailNo;
+	private int tpTeamBarNo;
+	private int tpTeamBarDetailStatus;
+	private int tpMemberNo;
+	private String tpTeamBarDetailContent;
 	public TeamBarDetail()
 	{
 		super();
 	}
-	public int getTeamBarNo() {
-		return TeamBarNo;
+	public int getTpTeamBarDetailNo() {
+		return tpTeamBarDetailNo;
 	}
-	public void setTeamBarNo(int teamBarNo) {
-		TeamBarNo = teamBarNo;
+	public void setTpTeamBarDetailNo(int tpTeamBarDetailNo) {
+		this.tpTeamBarDetailNo = tpTeamBarDetailNo;
 	}
-	public int getTeamBarDetailNo() {
-		return TeamBarDetailNo;
+	public int getTpTeamBarNo() {
+		return tpTeamBarNo;
 	}
-	public void setTeamBarDetailNo(int teamBarDetailNo) {
-		TeamBarDetailNo = teamBarDetailNo;
+	public void setTpTeamBarNo(int tpTeamBarNo) {
+		this.tpTeamBarNo = tpTeamBarNo;
 	}
-	public String getTeamBarDetailWorker() {
-		return TeamBarDetailWorker;
+	public int getTpTeamBarDetailStatus() {
+		return tpTeamBarDetailStatus;
 	}
-	public void setTeamBarDetailWorker(String teamBarDetailWorker) {
-		TeamBarDetailWorker = teamBarDetailWorker;
+	public void setTpTeamBarDetailStatus(int tpTeamBarDetailStatus) {
+		this.tpTeamBarDetailStatus = tpTeamBarDetailStatus;
 	}
-	public String getTeamBarDetailContent() {
-		return TeamBarDetailContent;
+	public int getTpMemberNo() {
+		return tpMemberNo;
 	}
-	public void setTeamBarDetailContent(String teamBarDetailContent) {
-		TeamBarDetailContent = teamBarDetailContent;
+	public void setTpMemberNo(int tpMemberNo) {
+		this.tpMemberNo = tpMemberNo;
 	}
-	public boolean isTeamBarDetailsWorked() {
-		return TeamBarDetailsWorked;
+	public String getTpTeamBarDetailContent() {
+		return tpTeamBarDetailContent;
 	}
-	public void setTeamBarDetailsWorked(boolean teamBarDetailsWorked) {
-		TeamBarDetailsWorked = teamBarDetailsWorked;
+	public void setTpTeamBarDetailContent(String tpTeamBarDetailContent) {
+		this.tpTeamBarDetailContent = tpTeamBarDetailContent;
 	}
-	public TeamBarDetail(int teamBarNo, int teamBarDetailNo, String teamBarDetailWorker, String teamBarDetailContent,
-			boolean teamBarDetailsWorked) {
+
+	public TeamBarDetail(int tpTeamBarDetailNo, int tpTeamBarNo, int tpTeamBarDetailStatus,
+			int tpMemberNo, String tpTeamBarDetailContent, boolean tpTeamBarDetailsWorked) {
 		super();
-		TeamBarNo = teamBarNo;
-		TeamBarDetailNo = teamBarDetailNo;
-		TeamBarDetailWorker = teamBarDetailWorker;
-		TeamBarDetailContent = teamBarDetailContent;
-		TeamBarDetailsWorked = teamBarDetailsWorked;
+		this.tpTeamBarDetailNo = tpTeamBarDetailNo;
+		this.tpTeamBarNo = tpTeamBarNo;
+		this.tpTeamBarDetailStatus = tpTeamBarDetailStatus;
+		this.tpMemberNo = tpMemberNo;
+		this.tpTeamBarDetailContent = tpTeamBarDetailContent;
 	}
+
 }

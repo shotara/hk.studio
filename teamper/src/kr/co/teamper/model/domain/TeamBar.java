@@ -1,8 +1,8 @@
 package kr.co.teamper.model.domain;
 
 public class TeamBar {
-	private int tpTeamNo;
 	private int tpTeamBarNo;
+	private int tpTeamNo;
 	private String tpTeamBarName;
 	private int tpTeamBarSize;
 	private int tpTeamBarPercent;
@@ -50,8 +50,8 @@ public class TeamBar {
 	public TeamBar(int tpTeamNo, int tpTeamBarNo, String tpTeamBarName, int tpTeamBarSize, int tpTeamBarPercent,
 			long tpTeamBarCreateDate) {
 		super();
-		this.tpTeamNo = tpTeamNo;
 		this.tpTeamBarNo = tpTeamBarNo;
+		this.tpTeamNo = tpTeamNo;
 		this.tpTeamBarName = tpTeamBarName;
 		this.tpTeamBarSize = tpTeamBarSize;
 		this.tpTeamBarPercent = tpTeamBarPercent;

@@ -14,7 +14,7 @@ public class DAOFactory {
 	static {
 		InputStream inputStream = null;
 		try {
-			inputStream = Resources.getResourceAsStream("kr.co.teamper.config.SqlMapConfig.xml");
+			inputStream = Resources.getResourceAsStream("kr/co/teamper/config/SqlMapConfig.xml");
 			SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
 			factory = builder.build(inputStream);
 		} catch (Exception e) {
