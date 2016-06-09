@@ -64,17 +64,27 @@ function openConfirmid(userinput) {
 
         <h2 class="form-signin-heading" >Teamper 회원가입</h2>
         
-        <input type="email" name="inputMemberEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="inputMemberEmail" class="form-control" placeholder="아이디(이메일주소)" required autofocus>
         
         <button class="btn btn-xs btn-primary btn-block"  OnClick="openConfirmid(this.form)">ID중복확인</button>
         
-        <input type="password" name="inputMemberPassword"  class="form-control" placeholder="Password" required>
+        <input type="password" name="inputMemberPassword"  class="form-control" placeholder="비밀번호" required>
         
-        <input type="password" name="inputMemberPasswordConfirm" class="form-control" placeholder="Password-confirm"  required>
+        <input type="password" name="inputMemberPasswordConfirm" class="form-control" placeholder="비밀번호 확인"  required>
      
-        <input type="text" name="inputMemberName" class="form-control" placeholder="Name" required>
+        <input type="text" name="inputMemberName" class="form-control" placeholder="이름" required>
         
-        <input type="text" name="inputMemberIntro" class="form-control" placeholder="Intro" >
+        <input type="text" name="inputMemberIntro" class="form-control" placeholder="자기소개" >
+        
+         <input type="text" name="inputMemberTimeTable1" class="form-control" placeholder="시간표입력    월           예시: 09~10;11~12" >
+         
+         <input type="text" name="inputMemberTimeTable2" class="form-control" placeholder="                      화 " >
+          
+         <input type="text" name="inputMemberTimeTable3" class="form-control" placeholder="                      수 " >
+         
+         <input type="text" name="inputMemberTimeTable4" class="form-control" placeholder="                      목" >
+           
+         <input type="text" name="inputMemberTimeTable5" class="form-control" placeholder="                      금 " >
      
         <button class="btn  btn-primary btn-block" type="submit" >회원가입</button>
         <button class="btn  btn-primary btn-block" type="reset" >다시입력</button>

@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site Template</title>
 <!-- Bootstrap core CSS & JavaScript -->
@@ -15,12 +15,12 @@
 <script src="../js/6-03.js"></script>
 <!-- Footer Custom style -->
 <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
-<!-- ¿¹Á¦¿¡¼­ »ç¿ëÇÏ±â À§ÇØ Á¤ÀÇÇÑ CSS -->
+<!-- ì˜ˆì œì—ì„œ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ì •ì˜í•œ CSS -->
 <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Top Menu(»ó´Ü°íÁ¤) -->
+<!-- Top Menu(ìƒë‹¨ê³ ì •) -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -51,7 +51,7 @@
         </div>
     </div>
 </nav>
-<!--/ Top Menu(»ó´Ü°íÁ¤) -->
+<!--/ Top Menu(ìƒë‹¨ê³ ì •) -->
  
  
 
@@ -63,7 +63,7 @@
 		<div class="container">
 			<h1>
 			
-				Notice <br> <small>°øÁö»çÇ×À» ¾Ë·Áµå¸³´Ï´Ù.</small>
+				Notice <br> <small>ê³µì§€ì‚¬í•­ì„ ì•Œë ¤ë“œë¦½ë‹ˆë‹¤.</small>
 			</h1>
 		</div>
 	</div>
@@ -71,21 +71,21 @@
 <!--/ Page Header -->
  			<center>
             <div class="tab_image"><img src="../images/team1.jpg" alt="" vspace=40/></div>            
-            <h2>&nbsp;&nbsp;°øÁö»çÇ×</h2>
-            <p>&nbsp;&nbsp;&nbsp;1Â÷ ±¸ÃàÀ» ÇÏ¿´½À´Ï´Ù<br>
-            &nbsp;&nbsp;&nbsp;private À¸·Î ÆÀÀÌ ±¸¼ºµÇÀÖ´Â »óÅÂ¸¦ ÀüÁ¦·Î ±â´ÉÀ» ±¸ÇöÇÕ´Ï´Ù.<br>
-            &nbsp;&nbsp;&nbsp;ÃßÈÄ public±îÁö ±¸ÇöÇÏ¿© ¼­ºñ½º¸¦ Á¦°øÇÒ ¿¹Á¤ÀÔ´Ï´Ù.</p>
+            <h2>&nbsp;&nbsp;ê³µì§€ì‚¬í•­</h2>
+            <p>&nbsp;&nbsp;&nbsp;1ì°¨ êµ¬ì¶•ì„ í•˜ì˜€ìŠµë‹ˆë‹¤<br>
+            &nbsp;&nbsp;&nbsp;private ìœ¼ë¡œ íŒ€ì´ êµ¬ì„±ë˜ìžˆëŠ” ìƒíƒœë¥¼ ì „ì œë¡œ ê¸°ëŠ¥ì„ êµ¬í˜„í•©ë‹ˆë‹¤.<br>
+            &nbsp;&nbsp;&nbsp;ì¶”í›„ publicê¹Œì§€ êµ¬í˜„í•˜ì—¬ ì„œë¹„ìŠ¤ë¥¼ ì œê³µí•  ì˜ˆì •ìž…ë‹ˆë‹¤.</p>
        </center>
-<!--  content ³¡ -->
+<!--  content ë -->
 
 
-<!-- Footer(ÇÏ´Ü °íÁ¤) -->    
+<!-- Footer(í•˜ë‹¨ ê³ ì •) -->    
 <footer class="footer">
 	<div class="container">
 		<p class="text-muted">&copy; COPYRIGHT 2016 Teamper</p>
 	</div>
 </footer>
-<!--/ Footer(ÇÏ´Ü °íÁ¤) -->        
+<!--/ Footer(í•˜ë‹¨ ê³ ì •) -->        
 
 </body>
 </html>

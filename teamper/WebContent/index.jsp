@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<!-- Top Menu(상단고정) -->
+<!-- Top Menu() -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -46,18 +46,18 @@
         </div>
     </div>
 </nav>
-<!--/ Top Menu(상단고정) -->
+<!--/ Top Menu() -->
  
  
- <!-- content(기존의 있는 내용 구현되면 가져옴) -->
+ <!-- content() -->
 
-<!-- Footer(하단 고정) -->    
+<!-- Footer() -->    
 <footer class="footer">
 	<div class="container">
 		<p class="text-muted">&copy; COPYRIGHT 2016 Teamper</p>
 	</div>
 </footer>
-<!--/ Footer(하단 고정) -->        
+<!--/ Footer() -->        
 
 </body>
 </html>
