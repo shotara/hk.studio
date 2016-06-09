@@ -15,7 +15,7 @@ public class TeamDAO {
 
 	private static final String namespace = "team";
 	
-	public static int addTeam(int sessionMemberNo, String inputTeamName, String inputTeamInfo, long inputCurrentTime) {
+	public static int addTeam(int sessionMemberNo, String inputTeamName, String inputTeamInfo, long inputCurrentDate) {
 		
 		SqlSession sqlSession = DAOFactory.getSqlSession(false);
 		int check=0;
@@ -24,7 +24,7 @@ public class TeamDAO {
 			map.put("memberNo", sessionMemberNo);
 			map.put("teamName", inputTeamName);
 		    map.put("teamInfo", inputTeamInfo);
-		    map.put("teamCurrentTime", inputCurrentTime);
+		    map.put("teamCurrentDate", inputCurrentDate);
 
 		    
 		    check = (int)sqlSession.insert(namespace + ".addTeam", map);

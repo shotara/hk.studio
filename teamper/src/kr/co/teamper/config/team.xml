@@ -5,7 +5,7 @@
 <mapper namespace="team">
 	
 	<select id="addTeam" parameterType="java.util.HashMap" resultType="int">
-		INSERT INTO tp_team(tpMemberNo, tpTeamName, tpTeamInfo, tpTeamCreateTime) VALUES(#{memberNo}, #{teamName}, #{teamInfo}, #{teamCurrentTime})
+		INSERT INTO tp_team(tpMemberNo, tpTeamName, tpTeamInfo, tpTeamCreateDate) VALUES(#{memberNo}, #{teamName}, #{teamInfo}, #{teamCurrentDate})
 	</select>
 
 	<select id="viewTeam" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Team">

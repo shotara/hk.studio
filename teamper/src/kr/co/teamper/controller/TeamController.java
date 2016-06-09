@@ -28,7 +28,7 @@ public class TeamController {
 			int sessionMemberNo = session.getAttribute("tpMemberNo") != null ? Integer.parseInt(session.getAttribute("tpMemberNo").toString()) : 0;
 			String inputTeamName = req.getParameter("inputTeamName") != null	? req.getParameter("inputTeamName").toString() : "";
 			String inputTeamInfo = req.getParameter("inputTeamInfo") != null ? req.getParameter("inputTeamInfo").toString() : "";
-			long inputCurrentTime = System.currentTimeMillis() / 1000;
+			long inputCurrentDate = System.currentTimeMillis() / 1000;
 
 			// 필수입력 체크
 			if (inputTeamName.equals("") || inputTeamInfo.equals("")) {
@@ -36,7 +36,7 @@ public class TeamController {
 				return;
 			}
 
-			if (TeamDAO.addTeam(sessionMemberNo, inputTeamName, inputTeamInfo, inputCurrentTime) != 1) {
+			if (TeamDAO.addTeam(1, inputTeamName, inputTeamInfo, inputCurrentDate) != 1) {
 				System.out.println("DB ERROR");
 				return;
 			}
