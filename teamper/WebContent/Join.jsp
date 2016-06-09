@@ -49,7 +49,7 @@ function checkIt() {
 function openConfirmid(userinput) {
 
 // url과 사용자 입력 id를 조합합니다.
-	url = "ConfirmID.jsp?id=" + userinput.id.value ;
+	url = "confirmID.jsp?id=" + userinput.id.value ;
  
 // 새로운 윈도우를 엽니다.
 	open(url, "confirm",
