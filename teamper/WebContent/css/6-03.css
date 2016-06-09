@@ -58,6 +58,7 @@ a {
 }
 /* 탭 내용 내의 이미지 속성 지정 */
 .tab_image img {
-    width: 26%;
-    padding: 20px;
+    width: 50%;
+    padding: 100px;
+    margin: 100px;
 }
