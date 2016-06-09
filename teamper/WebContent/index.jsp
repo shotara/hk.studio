@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>메인화면</title>
-<link href="../css/6-03.css" rel="stylesheet">    
-<script src="../js/jquery-1.11.2.min.js"></script>
-<script src="../js/6-03.js"></script>
+<link href="css/6-03.css" rel="stylesheet">    
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/6-03.js"></script>
 </head>
 <body>
 <div class="tab_container">
@@ -17,7 +17,7 @@
     </ul>
     <ul class="tab_panel">
         <li id="tab1">
-            <div class="tab_image"><img src="../images/team1.jpg" alt="" /></div>            
+            <div class="tab_image"><img src="images/team1.jpg" alt="" /></div>            
             <h2>소개</h2>
             <font face="맑은 고딕">
             <p> 안녕하세요. 저희 teamper프로그램은 대학생 또는 팀활동을 하는 사람들에게 간편하게<br>
@@ -27,7 +27,7 @@
             </font>
         </li>
         <li id="tab2">
-            <div class="tab_image"><img src="../images/team2.jpg" alt="" /></div>            
+            <div class="tab_image"><img src="images/team2.jpg" alt="" /></div>            
             <h2>공지</h2>
             <font face="맑은 고딕">
             <p> 현재 private 으로 1차 구축하였습니다 <br>
