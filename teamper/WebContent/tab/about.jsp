@@ -41,7 +41,7 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-			<button type="button" class="btn btn-success">join us</button>
+			<button type="button" class="btn btn-success" onclick="location.href='../Join.jsp'">join us</button>
           </form>
       
 
@@ -131,9 +131,24 @@
 		<div class="col-md-4">
 			<img src="../images/kimhyeonwoo.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
 			<h4>
-				Kim <small>developer</small>
+				김현우<small>Developer</small>
 			</h4>
-			<p>홈페이지의 백앤드 및 테스트 담당.</p>
+			<p>홈페이지의 백앤드 및 테스트 담당. </p>
+			</div>
+		<div class="col-md-4">	
+			<img src="../images/hancheonghwa.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
+			<h4>
+				한청화 <small>PM</small>
+			</h4>
+			<p>홈페이지의 프론트앤드 및 PM담당</p>
+		</div>
+		<div class="col-md-4">	
+			<img src="../images/kimsungmin.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
+			<h4>
+				김성민 <small>Developer</small>
+			</h4>
+			<p>홈페이지의 프론트앤드 및 사업관리담당.</p>
+			
 		</div>
 
 		
