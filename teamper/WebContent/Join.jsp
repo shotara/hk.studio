@@ -46,6 +46,7 @@ function checkIt() {
 }
    
 // 아이디 중복 여부를 판단
+/*
 function openConfirmid(userinput) {
 
 // url과 사용자 입력 id를 조합합니다.
@@ -55,6 +56,7 @@ function openConfirmid(userinput) {
 	open(url, "confirm",
 	"toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
 }
+*/
 </script>
    
    
@@ -66,7 +68,7 @@ function openConfirmid(userinput) {
         
         <input type="email" name="inputMemberEmail" class="form-control" placeholder="아이디(이메일주소)" required autofocus>
         
-        <button class="btn btn-xs btn-primary btn-block"  OnClick="openConfirmid(this.form)">ID중복확인</button>
+        <!--  <button class="btn btn-xs btn-primary btn-block"  OnClick="openConfirmid(this.form)">ID중복확인</button>-->
         
         <input type="password" name="inputMemberPassword"  class="form-control" placeholder="비밀번호" required>
         
@@ -76,15 +78,16 @@ function openConfirmid(userinput) {
         
         <input type="text" name="inputMemberIntro" class="form-control" placeholder="자기소개" >
         
-         <input type="text" name="inputMemberTimeTable1" class="form-control" placeholder="시간표입력    월           예시: 09~10;11~12" >
+        <input type="text" name="inputMemberTimeTable1" class="form-control" placeholder="시간표입력    월           예시: 09~10;11~12" >
          
-         <input type="text" name="inputMemberTimeTable2" class="form-control" placeholder="                      화 " >
+        <input type="text" name="inputMemberTimeTable2" class="form-control" placeholder="                      화 " >
           
-         <input type="text" name="inputMemberTimeTable3" class="form-control" placeholder="                      수 " >
+        <input type="text" name="inputMemberTimeTable3" class="form-control" placeholder="                      수 " >
          
-         <input type="text" name="inputMemberTimeTable4" class="form-control" placeholder="                      목" >
+        <input type="text" name="inputMemberTimeTable4" class="form-control" placeholder="                      목" >
            
-         <input type="text" name="inputMemberTimeTable5" class="form-control" placeholder="                      금 " >
+        <input type="text" name="inputMemberTimeTable5" class="form-control" placeholder="                      금 " >
+      
      
         <button class="btn  btn-primary btn-block" type="submit" >회원가입</button>
         <button class="btn  btn-primary btn-block" type="reset" >다시입력</button>
