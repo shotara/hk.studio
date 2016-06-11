@@ -28,7 +28,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-            	<li class="active"><a href=".jsp">Team</a></li>
+            	<li class="active"><a href="teamView.jsp">Team</a></li>
                 <li class="active"><a href="about.jsp">Introduce</a></li>
                 <li><a href="notice.jsp">Notice</a></li>
             </ul>
