@@ -47,7 +47,7 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-			<button type="button" class="btn btn-success" onclick="location.href='member/Join.jsp'">join us</button>
+			<button type="button" class="btn btn-success" onclick="location.href='/jsp/member/Join.jsp'">join us</button>
           </form>
      <!--로그인 끝-->
         </div>
