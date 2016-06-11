@@ -91,7 +91,7 @@ function openConfirmid(userinput) {
      
         <button class="btn  btn-primary btn-block" type="submit" >회원가입</button>
         <button class="btn  btn-primary btn-block" type="reset" >다시입력</button>
-        <button class="btn  btn-primary btn-block"  onclick="javascript:window.location='index.jsp'">돌아가기</button>
+        <button class="btn  btn-primary btn-block"  onclick="javascript:window.location='/index.jsp'">돌아가기</button>
 </form>
 
 

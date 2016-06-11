@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<% request.setCharacterEncoding("utf-8");%>
 
 <!-- Bootstrap core CSS & JavaScript -->
 <link href="/css/6-01.css" rel="stylesheet">
@@ -39,11 +40,16 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/jsp/team/teamView.jsp">Team</a></li>
+<% String id = "";
+
+id = (String)session.getAttribute("id");            // request에서 id 파라미터를 가져온다
+
+if(id==null){                            // id가 Null 이거나 없을 경우
+%>
+                <li class="active"><a href="/jsp/team/noTeam.jsp">Team</a></li>
                 <li><a href="/jsp/tab/notice.jsp">Notice</a></li>
             </ul>
 
-    <!--로그인 부분-->
           <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
@@ -54,6 +60,15 @@
             <button type="submit" class="btn btn-success">Sign in</button>
 			<button type="button" class="btn btn-success" onclick="location.href='/jsp/member/Join.jsp'">join us</button>
           </form>
+<%} %>         
+          
+<%if(id!=null){                            // id가 Null 이거나 없을 경우
+%>          
+   				<li class="active"><a href="/jsp/team/teamView.jsp">Team</a></li>
+                <li><a href="/jsp/tab/notice.jsp">Notice</a></li>
+            </ul>
+<%} %>
+          
      <!--로그인 끝-->
         </div>
     </div>
