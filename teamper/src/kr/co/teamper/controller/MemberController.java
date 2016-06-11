@@ -111,9 +111,12 @@ public class MemberController {
 			HttpSession session = req.getSession();
 
 			String inputMemberEmail = req.getParameter("inputMemberEmail") != null ? req.getParameter("inputMemberEmail").toString() : "";
-			String inputMemberPassword = req.getParameter("inputMemberPassword") != null ? req.getParameter("inputMemberPassword").toString() : "";
-			
+			String inputMemberPassword = req.getParameter("inputMemberPassword") != null ? req.getParameter("inputMemberPassword").toString() : "";		
 			String encryptMemberPassword = EncryptUtil.testMD5(inputMemberPassword);
+			
+			JSONObject jObject = new JSONObject();
+			res.setContentType("application/json");
+			res.setCharacterEncoding("UTF-8");	
 			
 			// 이메일과 비밀번호 체크
 			Member checkMember = MemberDAO.getMember(inputMemberEmail, encryptMemberPassword);
@@ -121,6 +124,8 @@ public class MemberController {
 			// 아이디 혹은 비밀번호가 일치하지 않는 경우
 			if(checkMember==null) {
 				System.out.println("아이디 혹은 패스워드가 일치하지 않습니다.");
+				jObject.put("outputResult", "-1");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
 			
@@ -133,7 +138,8 @@ public class MemberController {
 
 			
 			System.out.println("로그인되었습니다.");
-			// index.jsp로 리턴
+			jObject.put("outputResult", "1");
+			res.getWriter().write(jObject.toString());
 			return;
 			
 		
@@ -147,8 +153,14 @@ public class MemberController {
 		try {
 			HttpSession session = req.getSession(false);
 			
+			JSONObject jObject = new JSONObject();
+			res.setContentType("application/json");
+			res.setCharacterEncoding("UTF-8");	
+			
 			if(session == null) {
 				System.out.println("이미 로그아웃 되있습니다.");
+				jObject.put("outputResult", "-1");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
 			

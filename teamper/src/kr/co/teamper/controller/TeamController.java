@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
+
 import kr.co.teamper.model.MemberDAO;
 import kr.co.teamper.model.TeamDAO;
 import kr.co.teamper.model.domain.Member;
@@ -30,17 +32,26 @@ public class TeamController {
 			String inputTeamInfo = req.getParameter("inputTeamInfo") != null ? req.getParameter("inputTeamInfo").toString() : "";
 			long inputCurrentDate = System.currentTimeMillis() / 1000;
 
+			JSONObject jObject = new JSONObject();
+			res.setContentType("application/json");
+			res.setCharacterEncoding("UTF-8");	
+			
 			// 필수입력 체크
 			if (inputTeamName.equals("") || inputTeamInfo.equals("")) {
 				System.out.println("필수입력란 미입력.");
+				jObject.put("outputResult", "-1");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
 
 			if (TeamDAO.addTeam(1, inputTeamName, inputTeamInfo, inputCurrentDate) != 1) {
 				System.out.println("DB ERROR");
+				jObject.put("outputResult", "-2");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
-
+			jObject.put("outputResult", "1");
+			res.getWriter().write(jObject.toString());
 			return;
 
 		} catch (Exception e) {
