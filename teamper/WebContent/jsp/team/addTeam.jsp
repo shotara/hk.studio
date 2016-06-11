@@ -43,7 +43,7 @@
       <div>
        <button class="btn btn-primary " name="submit" type="submit">
         완료
-       </button>
+ <button type="button" class="btn btn-primary" onclick="location.href='/jsp/team/noTeam.jsp'">돌아가기</button>
       </div>
      </div>
     </form>
