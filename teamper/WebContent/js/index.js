@@ -10,12 +10,12 @@
   }
 
   DayScheduleSelector.DEFAULTS = {
-    days        : [0, 1, 2, 3, 4, 5, 6],  // Sun - Sat
-    startTime   : '08:00',                // HH:mm format
-    endTime     : '20:00',                // HH:mm format
-    interval    : 30,                     // minutes
-    stringDays  : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    template    : '<div class="day-schedule-selector">'         +
+    days        : [0, 1, 2, 3, 4],  // Sun - Sat
+    startTime   : '09:00',                // HH:mm format
+    endTime     : '18:00',                // HH:mm format
+    interval    : 60,                     // minutes
+    stringDays  : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu'],
+    template    : '<div class="day-schedule-selector" style="float:right; margin-right:20px;">'         +
                     '<table class="schedule-table">'            +
                       '<thead class="schedule-header"></thead>' +
                       '<tbody class="schedule-rows"></tbody>'   +

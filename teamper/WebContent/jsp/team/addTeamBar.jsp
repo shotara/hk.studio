@@ -26,6 +26,7 @@
       팀장이 일감의 단계를 입력합니다.
      </p>
     </div>
+    
     <form method="post">
      <div class="form-group ">
       <label class="control-label " for="name">
@@ -42,19 +43,17 @@
       </label>
       <input class="form-control" id="number" name="number" type="text"/>
       <span class="help-block" id="hint_number">
-       Team Bar의 크기를 입력합니다. 크기는 이 일감의 비중을 시각화하여 나타냅니다.
+       Team Bar의 크기를 입력합니다. 1~100
       </span>
      </div>
      <div class="form-group">
       <div>
-       <button class="btn btn-primary " name="addwork" type="submit">
-        추가
-       </button>
-       <button class="btn btn-primary " name="workscess" type="submit">
+       <button class="btn btn-primary " type="button" onclick="Team.AddBar">
         완료
        </button>
       </div>
      </div>
+     
     </form>
    </div>
   </div>
