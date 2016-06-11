@@ -1,99 +1,88 @@
-<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 
 <html>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="../../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../../css/join.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../../css/join.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../js/ie-emulation-modes-warning.js"></script>
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="../../js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 <head>
-<title>È¸¿ø°¡ÀÔ</title>
-<link href="../../style.css" rel="stylesheet" type="text/css">
+<title>íšŒì›ê°€ì…</title>
+<jsp:include page="../../jsp/header.jsp" flush="false" />
 <script language="JavaScript">
- 
-function checkIt() {
-	
-	var userinput = eval("document.userinput");
+	function checkIt() {
 
-	if(userinput.inputMemberPassword.value != userinput.inputMemberPasswordConfirm.value)
-	{
-		alert("ºñ¹Ğ¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä");
-		return false;
+		var userinput = eval("document.userinput");
+
+		if (userinput.inputMemberPassword.value != userinput.inputMemberPasswordConfirm.value) {
+			alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”");
+			return false;
+		}
+
 	}
 
-}
-   
-// ¾ÆÀÌµğ Áßº¹ ¿©ºÎ¸¦ ÆÇ´Ü
-/*
-function openConfirmid(userinput) {
+	// ì•„ì´ë”” ì¤‘ë³µ ì—¬ë¶€ë¥¼ íŒë‹¨
+	/*
+	 function openConfirmid(userinput) {
 
-// url°ú »ç¿ëÀÚ ÀÔ·Â id¸¦ Á¶ÇÕÇÕ´Ï´Ù.
-	url = "confirmID.jsp?id=" + userinput.id.value ;
- 
-// »õ·Î¿î À©µµ¿ì¸¦ ¿±´Ï´Ù.
-	open(url, "confirm",
-	"toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
-}
-*/
+	 // urlê³¼ ì‚¬ìš©ì ì…ë ¥ idë¥¼ ì¡°í•©í•©ë‹ˆë‹¤.
+	 url = "confirmID.jsp?id=" + userinput.id.value ;
+	
+	 // ìƒˆë¡œìš´ ìœˆë„ìš°ë¥¼ ì—½ë‹ˆë‹¤.
+	 open(url, "confirm",
+	 "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
+	 }
+	 */
 </script>
-   
-   
 <body>
-   
-<form method="post" class="form-signin" action="joinMember" name="userinput" onSubmit="return checkIt()">
+	<div aligin="center">
+		<form method="post" class="form-signin" action="joinMember"
+			name="userinput" onSubmit="return checkIt()">
 
-        <h2 class="form-signin-heading" >Teamper È¸¿ø°¡ÀÔ</h2>
-        
-        <input type="email" name="inputMemberEmail" class="form-control" placeholder="¾ÆÀÌµğ(ÀÌ¸ŞÀÏÁÖ¼Ò)" required autofocus>
-        
-        <!--  <button class="btn btn-xs btn-primary btn-block"  OnClick="openConfirmid(this.form)">IDÁßº¹È®ÀÎ</button>-->
-        
-        <input type="password" name="inputMemberPassword"  class="form-control" placeholder="ºñ¹Ğ¹øÈ£" required>
-        
-        <input type="password" name="inputMemberPasswordConfirm" class="form-control" placeholder="ºñ¹Ğ¹øÈ£ È®ÀÎ"  required>
-     
-        <input type="text" name="inputMemberName" class="form-control" placeholder="ÀÌ¸§" required>
-        
-        <input type="text" name="inputMemberIntro" class="form-control" placeholder="ÀÚ±â¼Ò°³" >
-        
-        <input type="text" name="inputMemberTimeTable1" class="form-control" placeholder="½Ã°£Ç¥ÀÔ·Â    ¿ù           ¿¹½Ã: 09~10;11~12" >
-         
-        <input type="text" name="inputMemberTimeTable2" class="form-control" placeholder="                      È­ " >
-          
-        <input type="text" name="inputMemberTimeTable3" class="form-control" placeholder="                      ¼ö " >
-         
-        <input type="text" name="inputMemberTimeTable4" class="form-control" placeholder="                      ¸ñ" >
-           
-        <input type="text" name="inputMemberTimeTable5" class="form-control" placeholder="                      ±İ " >
-      
-     
-        <button class="btn  btn-primary btn-block" type="submit" >È¸¿ø°¡ÀÔ</button>
-        <button class="btn  btn-primary btn-block" type="reset" >´Ù½ÃÀÔ·Â</button>
-        <button class="btn  btn-primary btn-block"  onclick="javascript:window.location='/index.jsp'">µ¹¾Æ°¡±â</button>
-</form>
+			<h2 class="form-signin-heading">Teamper íšŒì›ê°€ì…</h2>
 
+			<input type="email" id="joinMemberEmail" class="form-control"
+				placeholder="ì•„ì´ë””(ì´ë©”ì¼ì£¼ì†Œ)" required autofocus>
 
+			<!--  <button class="btn btn-xs btn-primary btn-block"  OnClick="openConfirmid(this.form)">IDì¤‘ë³µí™•ì¸</button>-->
+
+			<input type="password" id="joinMemberPassword" class="form-control" placeholder="ë¹„ë°€ë²ˆí˜¸" required>
+			<input type="password" id="joinMemberPasswordConfirm" class="form-control" placeholder="ë¹„ë°€ë²ˆí˜¸ í™•ì¸" required> 
+			<input type="text" id="joinMemberName" class="form-control" placeholder="ì´ë¦„" required> 
+			<input type="text" id="joinMemberIntro" class="form-control" placeholder="ìê¸°ì†Œê°œ">
+			<input type="text" id="joinMemberTimeTable1" class="form-control" placeholder="ì‹œê°„í‘œì…ë ¥    ì›”           ì˜ˆì‹œ: 09~10;11~12">
+			<input type="text" id="joinMemberTimeTable2" class="form-control" placeholder="                      í™” "> 
+			<input type="text" id="joinMemberTimeTable3" class="form-control" placeholder="                      ìˆ˜ "> 
+			<input type="text" id="joinMemberTimeTable4" class="form-control" placeholder="                      ëª©"> 
+			<input type="text" id="joinMemberTimeTable5" class="form-control" placeholder="                      ê¸ˆ ">
+
+			<button class="btn  btn-primary btn-block" type="button" onclick="Member.Join()">íšŒì›ê°€ì…</button>
+			<button class="btn  btn-primary btn-block" type="reset">ë‹¤ì‹œì…ë ¥</button>
+			<button class="btn  btn-primary btn-block" onclick="javascript:window.location='/index.jsp'">ëŒì•„ê°€ê¸°</button>
+		</form>
+
+	</div>
 </body>
 </html>

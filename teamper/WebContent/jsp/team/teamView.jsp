@@ -11,7 +11,9 @@
 	<!-- content() -->
 	<!-- 로그인 안했을 경우 -->
 	<c:if test="${empty sessionScope.tpMemberNo}">
-		  <script>location.href = "/jsp/member/join.jsp"; </script>
+		  <script>
+		  alert("먼저 회원가입을 해주세요!")
+		  location.href = "/jsp/member/join.jsp"; </script>
 	</c:if>
 	
 	<!-- 로그인 했을경우 -->

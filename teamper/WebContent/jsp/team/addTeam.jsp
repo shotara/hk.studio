@@ -5,8 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-<link rel="stylesheet"
-	href="https://formden.com/static/cdn/bootstrap-iso.css" />
 <jsp:include page="../../jsp/header.jsp" flush="false" />
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>
@@ -50,7 +48,7 @@
 						<div class="form-group">
 							<div>
 								<button class="btn btn-primary " type="button" onclick="Team.AddTeam()">완료</button>
-									<button type="button" class="btn btn-primary" onclick="location.href='/jsp/team/noTeam.jsp'">돌아가기</button>
+								<button type="button" class="btn btn-primary" onclick="location.href='/jsp/team/noTeam.jsp'">돌아가기</button>
 							</div>
 						</div>
 					</form>

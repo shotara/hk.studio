@@ -2,16 +2,16 @@ var Team = {};
 
 Team.AddTeam = function() {
 
-//	// 1 입력폼 체크
-//	if($("#inputTeamName").val() =="") {
-//		alert("팀명을 입력해주세요.");
-//		return false;
-//	}
-//		
-//	if($("#inputTeamInfo").val() == "") {
-//		alert("팀소개를 입력해주세요.");
-//		return false;
-//	}
+	// 1 입력폼 체크
+	if($("#inputTeamName").val() =="") {
+		alert("팀명을 입력해주세요.");
+		return false;
+	}
+		
+	if($("#inputTeamInfo").val() == "") {
+		alert("팀소개를 입력해주세요.");
+		return false;
+	}
 	
 	var action = "/team?action=addTeam";
 	var form_data = {
@@ -43,9 +43,6 @@ Team.AddTeam = function() {
 
 	return false;
 }
-
-
-var Team = {};
 
 Team.AddTeamBar = function() {
 
@@ -80,7 +77,6 @@ Team.AddTeamBar = function() {
 
 	return false;
 }
-
 
 
 Team.AddTeamBarDetail = function() {

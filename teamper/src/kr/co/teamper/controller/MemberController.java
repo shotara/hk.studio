@@ -35,6 +35,10 @@ public class MemberController {
 			String inputMemberTimeTable4 = req.getParameter("inputMemberTimeTable1")!= null ? req.getParameter("inputMemberTimeTable4").toString() : "";
 			String inputMemberTimeTable5 = req.getParameter("inputMemberTimeTable1")!= null ? req.getParameter("inputMemberTimeTable5").toString() : "";
 			long inputCurrentTime = System.currentTimeMillis()/1000;
+	
+			JSONObject jObject = new JSONObject();
+			res.setContentType("application/json");
+			res.setCharacterEncoding("UTF-8");	
 			
 			//필수입력 체크
 			if(inputMemberEmail.equals("")||inputMemberPassword.equals("")){
@@ -44,21 +48,28 @@ public class MemberController {
 			
 			// 이메일 중복여부 체크
 			int checkMember = MemberDAO.checkMember(inputMemberEmail);
-			System.out.println(checkMember);
 			if(checkMember==1) {
 				System.out.println("이미 존재하는 회원입니다.");
+				jObject.put("outputResult", "-1");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
-			
+			System.out.println(inputMemberPassword);
+			System.out.println(inputMemberPasswordConfirm);
+
 			// 비밀번호와 비밀번호 확인이 일치하지 않습니다.
 			if(!inputMemberPassword.equals(inputMemberPasswordConfirm)) {
 				System.out.println("비밀번호와 비밀번호 확인과 일치하지 않습니다.");
+				jObject.put("outputResult", "-2");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
 			
 			// DB에 회원 추가
 			if(MemberDAO.addMember(inputMemberEmail, inputMemberName, encryptMemberPassword ,inputMemberIntro, inputCurrentTime)!=1){
 				System.out.println("DB ERROR");
+				jObject.put("outputResult", "-3");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
 		
@@ -74,6 +85,8 @@ public class MemberController {
 
 			System.out.println("회원가입이 완료되었습니다.");
 			// index.jsp로 리턴
+			jObject.put("outputResult", "1");
+			res.getWriter().write(jObject.toString());
 			return;
 		
 		} catch(Exception e) {
