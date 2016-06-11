@@ -2,7 +2,7 @@ package kr.co.teamper.model.domain;
 
 public class Member {
 
-	private int tpMembeNo;
+	private int tpMemberNo;
 	private String tpMemberEmail;
 	private String tpMemberName;
 	private String tpMemberPassword;
@@ -12,11 +12,11 @@ public class Member {
 	public Member() {
 		super();
 	}
-	public int getTpMembeNo() {
-		return tpMembeNo;
+	public int getTpMemberNo() {
+		return tpMemberNo;
 	}
-	public void setTpMembeNo(int tpMembeNo) {
-		this.tpMembeNo = tpMembeNo;
+	public void setTpMemberNo(int tpMemberNo) {
+		this.tpMemberNo = tpMemberNo;
 	}
 	public String getTpMemberEmail() {
 		return tpMemberEmail;
@@ -54,10 +54,10 @@ public class Member {
 	public void setTpMemberCreateDate(long tpMemberCreateDate) {
 		this.tpMemberCreateDate = tpMemberCreateDate;
 	}
-	public Member(int tpMembeNo, String tpMemberEmail, String tpMemberName, String tpMemberPassword,
+	public Member(int tpMemberNo, String tpMemberEmail, String tpMemberName, String tpMemberPassword,
 			String tpMemberPhone, String tpMemberIntro, long tpMemberCreateDate) {
 		super();
-		this.tpMembeNo = tpMembeNo;
+		this.tpMemberNo = tpMemberNo;
 		this.tpMemberEmail = tpMemberEmail;
 		this.tpMemberName = tpMemberName;
 		this.tpMemberPassword = tpMemberPassword;
@@ -65,5 +65,4 @@ public class Member {
 		this.tpMemberIntro = tpMemberIntro;
 		this.tpMemberCreateDate = tpMemberCreateDate;
 	}
-
 }

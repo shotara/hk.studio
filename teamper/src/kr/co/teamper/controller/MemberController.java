@@ -54,8 +54,6 @@ public class MemberController {
 				res.getWriter().write(jObject.toString());
 				return;
 			}
-			System.out.println(inputMemberPassword);
-			System.out.println(inputMemberPasswordConfirm);
 
 			// 비밀번호와 비밀번호 확인이 일치하지 않습니다.
 			if(!inputMemberPassword.equals(inputMemberPasswordConfirm)) {
@@ -77,11 +75,11 @@ public class MemberController {
 			Member getMember = MemberDAO.getMember(inputMemberEmail, encryptMemberPassword);
 			
 			// 시간표 입력
-			if(!inputMemberTimeTable1.equals("")) setTimeTable(getMember.getTpMembeNo() ,1 ,inputMemberTimeTable1);			
-			if(!inputMemberTimeTable2.equals("")) setTimeTable(getMember.getTpMembeNo() ,2, inputMemberTimeTable2);			
-			if(!inputMemberTimeTable3.equals("")) setTimeTable(getMember.getTpMembeNo() ,3, inputMemberTimeTable3);			
-			if(!inputMemberTimeTable4.equals("")) setTimeTable(getMember.getTpMembeNo() ,4, inputMemberTimeTable4);			
-			if(!inputMemberTimeTable5.equals("")) setTimeTable(getMember.getTpMembeNo() ,5, inputMemberTimeTable5);					
+			if(!inputMemberTimeTable1.equals("")) setTimeTable(getMember.getTpMemberNo() ,1 ,inputMemberTimeTable1);			
+			if(!inputMemberTimeTable2.equals("")) setTimeTable(getMember.getTpMemberNo() ,2, inputMemberTimeTable2);			
+			if(!inputMemberTimeTable3.equals("")) setTimeTable(getMember.getTpMemberNo() ,3, inputMemberTimeTable3);			
+			if(!inputMemberTimeTable4.equals("")) setTimeTable(getMember.getTpMemberNo() ,4, inputMemberTimeTable4);			
+			if(!inputMemberTimeTable5.equals("")) setTimeTable(getMember.getTpMemberNo() ,5, inputMemberTimeTable5);					
 
 			System.out.println("회원가입이 완료되었습니다.");
 			// index.jsp로 리턴
@@ -144,7 +142,7 @@ public class MemberController {
 			
 			// 세션 저장
 			session.setMaxInactiveInterval(3600);
-			session.setAttribute("tpMemberNo", checkMember.getTpMembeNo());
+			session.setAttribute("tpMemberNo", checkMember.getTpMemberNo());
 			session.setAttribute("tpMemberEmail", checkMember.getTpMemberEmail());
 			session.setAttribute("tpMemberName", checkMember.getTpMemberName());
 			session.setAttribute("tpMemberIntro", checkMember.getTpMemberIntro());
@@ -200,7 +198,6 @@ public class MemberController {
 			// 추가된 회원의 정보를 가져온다.
 			Member getMember = MemberDAO.getMemberByMemberNo(inputMemberNo);
 
-			System.out.println(getMember);
 			// index.jsp로 리턴
 			return;
 		

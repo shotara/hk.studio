@@ -1,5 +1,38 @@
 var Team = {};
 
+Team.viewTeam = function() {
+
+
+	var action = "/team?action=viewTeam";
+	var form_data = {
+		inputMemberNo :  $("#sessionScope.tpMemberNo").val(),
+	};
+	
+	$.ajax({
+		type : "POST",
+		url : action,
+		data : form_data,
+		dataType : "json",
+		async: false,
+		success: function(response) {
+			if(response.outputResult == "1") {
+				return true;
+				location.reload();
+			} else if(response.outputResult =="-1") {
+				alert("팀이 존재하지 않습니다.");
+			} else {
+				alert("알수없는 문제가 생겼습니다.");
+			}
+
+		}, error: function(xhr,status,error) {
+
+		}
+	});
+
+	return false;
+}
+
+
 Team.AddTeam = function() {
 
 	// 1 입력폼 체크
@@ -28,7 +61,7 @@ Team.AddTeam = function() {
 		success: function(response) {
 			if(response.outputResult == "1") {
 				alert("팀이 생성되었습니다..");
-				location.href = "/jsp/team/teamView.jsp";
+				location.href = "/";
 				
 			} else if(response.outputResult =="-1") {
 				alert("팀명이나 팀소개가 입력되지 않았습니다.");

@@ -44,12 +44,13 @@ public class TeamController {
 				return;
 			}
 
-			if (TeamDAO.addTeam(1, inputTeamName, inputTeamInfo, inputCurrentDate) != 1) {
+			if (TeamDAO.addTeam(sessionMemberNo, inputTeamName, inputTeamInfo, inputCurrentDate) != 1) {
 				System.out.println("DB ERROR");
 				jObject.put("outputResult", "-2");
 				res.getWriter().write(jObject.toString());
 				return;
 			}
+
 			jObject.put("outputResult", "1");
 			res.getWriter().write(jObject.toString());
 			return;
@@ -66,12 +67,18 @@ public class TeamController {
 
 			int sessionMemberNo = session.getAttribute("tpMemberNo") != null ? Integer.parseInt(session.getAttribute("tpMemberNo").toString()) : 0;
 			
+			JSONObject jObject = new JSONObject();
+			res.setContentType("application/json");
+			res.setCharacterEncoding("UTF-8");	
+			
+
 			// 팀을 검색했을때 팀이 있으면 팀뷰, 없으면 생성해야함.
 			Team team =  TeamDAO.viewTeam(sessionMemberNo);
 			if (team==null) {
 				// 팀이 없을때 
 				System.out.println("NoTeam");
-				req.setAttribute("outputTeamNo", 0);				
+				jObject.put("outputResult", "-1");
+				res.getWriter().write(jObject.toString());
 				return;
 			}
 
@@ -86,8 +93,10 @@ public class TeamController {
 			ArrayList<TeamBarDetail> teamBarDetailList = new ArrayList<TeamBarDetail>(); 
 			
 			if(teamBarList.isEmpty()) {
-				System.out.println("NoList");
-				return;
+//				System.out.println("NoList");
+//				jObject.put("outputTeamNo", "-2");
+//				res.getWriter().write(jObject.toString());
+//				return;
 			}
 			
 
@@ -122,7 +131,12 @@ public class TeamController {
 				}
 				outputTeamBar.add(tempTeamBar);
 			}
-			System.out.println(outputTeamBar);
+			
+
+			session.setAttribute("tpTeamNo", team.getTpTeamNo());
+			
+			jObject.put("outputResult", "1");
+			res.getWriter().write(jObject.toString());
 			return;
 
 		} catch (Exception e) {

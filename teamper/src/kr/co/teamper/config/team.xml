@@ -9,7 +9,7 @@
 	</select>
 
 	<select id="viewTeam" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.Team">
-		SELECT * FROM tp_team WHERE tpMemberNo = #{memberNo}
+		SELECT * FROM tp_team WHERE tpMemberNo = #{memberNo} LIMIT 1
 	</select>	
 	
 	<select id="getTeamBar" parameterType="java.util.HashMap" resultType="kr.co.teamper.model.domain.TeamBar">
