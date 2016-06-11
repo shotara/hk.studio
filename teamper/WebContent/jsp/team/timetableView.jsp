@@ -18,7 +18,7 @@
   </style>
 </head>
 <body>
-<h1 style="margin:150px auto 30px auto;">입력하신 시간표입니다.</h1>
+<h1 style="margin:auto 30px auto;">입력하신 시간표입니다.</h1>
   <div id="day-schedule"></div>
 
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

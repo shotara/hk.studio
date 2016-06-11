@@ -16,10 +16,15 @@
 <link href="/css/sticky-footer-navbar.css" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/theme.css" rel="stylesheet">
+<link href="/css/timetableView.css" rel="stylesheet">
+
 
 <script src="/js/6-03.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/day_schedule_selector.js"></script>
 <script src="/js/ie-emulation-modes-warning.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/jquery-1.11.2.js"></script>
 <script src="/js/jquery-1.11.2.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
