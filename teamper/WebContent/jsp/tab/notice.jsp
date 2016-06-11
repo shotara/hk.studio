@@ -7,16 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site Template</title>
 <!-- Bootstrap core CSS & JavaScript -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/6-03.css" rel="stylesheet">   
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/6-03.css" rel="stylesheet">   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../js/jquery-1.11.2.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/6-03.js"></script>
+<script src="../../js/jquery-1.11.2.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/6-03.js"></script>
 <!-- Footer Custom style -->
-<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
+<link href="../../css/sticky-footer-navbar.css" rel="stylesheet">
 <!-- 예제에서 사용하기 위해 정의한 CSS -->
-<link href="../css/style.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-			<button type="button" class="btn btn-success" onclick="location.href='../Join.jsp'" >join us</button>
+			<button type="button" class="btn btn-success" onclick="location.href='../member/Join.jsp'" >join us</button>
           </form>
       
 
@@ -70,7 +70,7 @@
 </div>
 <!--/ Page Header -->
  			<center>
-            <div class="tab_image"><img src="../images/team1.jpg" alt="" vspace=40/></div>            
+            <div class="tab_image"><img src="../../images/team1.jpg" alt="" vspace=40/></div>            
             <h2>&nbsp;&nbsp;공지사항</h2>
             <p>&nbsp;&nbsp;&nbsp;1차 구축을 하였습니다<br>
             &nbsp;&nbsp;&nbsp;private 으로 팀이 구성되있는 상태를 전제로 기능을 구현합니다.<br>

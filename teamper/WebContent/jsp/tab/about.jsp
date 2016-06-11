@@ -7,13 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site Template</title>
 <!-- Bootstrap core CSS & JavaScript -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 <!-- Footer Custom style -->
-<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
+<link href="../../css/sticky-footer-navbar.css" rel="stylesheet">
 <!-- 예제에서 사용하기 위해 정의한 CSS -->
-<link href="../css/style.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-            	<li class="active"><a href="teamView.jsp">Team</a></li>
+            	<li class="active"><a href="../team/teamView.jsp">Team</a></li>
                 <li class="active"><a href="about.jsp">Introduce</a></li>
                 <li><a href="notice.jsp">Notice</a></li>
             </ul>
@@ -42,7 +42,7 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-			<button type="button" class="btn btn-success" onclick="location.href='../Join.jsp'">join us</button>
+			<button type="button" class="btn btn-success" onclick="location.href='../member/Join.jsp'">join us</button>
           </form>
       
 
@@ -69,7 +69,7 @@
 <div class="container">
 
     <!-- Custom styles for this template -->
-    <link href="../css/carousel.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
     
 	<!-- Carousel -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -130,21 +130,21 @@
 	<h2>The Crew</h2>
 	<div class="row">
 		<div class="col-md-4">
-			<img src="../images/kimhyeonwoo.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
+			<img src="../../images/kimhyeonwoo.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
 			<h4>
 				김현우<small>Developer</small>
 			</h4>
 			<p>홈페이지의 백앤드 및 테스트 담당. </p>
 			</div>
 		<div class="col-md-4">	
-			<img src="../images/hancheonghwa.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
+			<img src="../../images/hancheonghwa.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
 			<h4>
 				한청화 <small>PM</small>
 			</h4>
 			<p>홈페이지의 프론트앤드 및 PM담당</p>
 		</div>
 		<div class="col-md-4">	
-			<img src="../images/kimsungmin.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
+			<img src="../../images/kimsungmin.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
 			<h4>
 				김성민 <small>Developer</small>
 			</h4>

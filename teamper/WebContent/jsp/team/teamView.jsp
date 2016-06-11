@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site Template</title>
 <!-- Bootstrap core CSS & JavaScript -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 <!-- Footer Custom style -->
-<link href="css/sticky-footer-navbar.css" rel="stylesheet">
+<link href="../../css/sticky-footer-navbar.css" rel="stylesheet">
 <!-- 예제에서 사용하기 위해 정의한 CSS -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-     <script src="js/ie-emulation-modes-warning.js"></script>
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="../../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../css/theme.css" rel="stylesheet">
+     <script src="../../js/ie-emulation-modes-warning.js"></script>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="tab/about.jsp">Introduce</a></li>
+                <li class="active"><a href="../tab/about.jsp">Introduce</a></li>
                 <li><a href="tab/notice.jsp">Notice</a></li>
             </ul>
 
