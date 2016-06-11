@@ -69,7 +69,7 @@
 <div class="container">
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="../../css/carousel.css" rel="stylesheet">
     
 	<!-- Carousel -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
