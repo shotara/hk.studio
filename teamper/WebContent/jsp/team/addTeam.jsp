@@ -23,7 +23,7 @@
 }
 </style>
 
-<title>팀생성</title>
+<title>Teamper - 팀생성</title>
 </head>
 <body>
 	<!-- HTML Form (wrapped in a .bootstrap-iso div) -->

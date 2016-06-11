@@ -17,7 +17,7 @@
 			<div class="container">
 				<h1>
 
-					About <br> <small>Teamper의 기능과 직원을 소개합니다.</small>
+					Hellow! Teamper! <br/><br/> <small>Teamper의 기능과 Hk. Studio 식구를 소개합니다.</small>
 				</h1>
 			</div>
 		</div>
@@ -27,8 +27,6 @@
 	<div class="container">
 
 		<!-- Custom styles for this template -->
-		<link href="css/carousel.css" rel="stylesheet">
-
 		<!-- Carousel -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -39,39 +37,24 @@
 			</ol>
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-						alt="First slide">
+					<img src="../images/1234.jpg" alt="First slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>시간표 대조</h1>
-							<p>
-								<font face="맑은 고딕"> 팀퍼를 통하여 팀원들의 시간표를 대조하여 최적의 팀플활동 시간을
-									제시합니다. </font>
-							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item">
+					<img src="../images/154.jpg" alt="Second slide">
+					<div class="container">
+						<div class="carousel-caption">
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-						alt="Second slide">
+					<img src="../images/5678.jpg" alt="Third slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>진행사항 파악</h1>
-							<p>팀 활동의 진행사항을 UI를 통하여 손쉽게 확인하고 진행율을 확인 할 수 있습니다.</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<img
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-						alt="Third slide">
-					<div class="container">
-						<div class="carousel-caption">
-							<h1>팀구하기</h1>
-							<p>2차 구축시, 더 나아가서는 팀을 오프라인 상으로 구하고 초대 하여 좀 더 나은 팀을 꾸릴 수 있습니다.
-							</p>
 						</div>
 					</div>
 				</div>
@@ -96,7 +79,7 @@
 				<h4>
 					김현우<small>Developer</small>
 				</h4>
-				<p>홈페이지의 백앤드 및 테스트 담당.</p>
+				<p>홈페이지의 백앤드 및 테스트 담당.</p><br/>
 			</div>
 			<div class="col-md-4">
 				<img src="images/hancheonghwa.jpg"
@@ -104,7 +87,7 @@
 				<h4>
 					한청화 <small>PM</small>
 				</h4>
-				<p>홈페이지의 프론트앤드 및 PM담당</p>
+				<p>홈페이지의 프론트앤드 및 PM담당</p><br/>
 			</div>
 			<div class="col-md-4">
 				<img src="images/kimsungmin.jpg"
@@ -112,7 +95,7 @@
 				<h4>
 					김성민 <small>Developer</small>
 				</h4>
-				<p>홈페이지의 프론트앤드 및 사업관리담당.</p>
+				<p>홈페이지의 프론트앤드 및 사업관리담당.</p><br/>
 
 			</div>
 		</div>

@@ -15,7 +15,7 @@
     endTime     : '18:00',                // HH:mm format
     interval    : 60,                     // minutes
     stringDays  : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu'],
-    template    : '<div class="day-schedule-selector" style="float:right; margin-right:20px;">'         +
+    template    : '<div class="day-schedule-selector" style="float:right; margin-right:380px;">'         +
                     '<table class="schedule-table">'            +
                       '<thead class="schedule-header"></thead>' +
                       '<tbody class="schedule-rows"></tbody>'   +

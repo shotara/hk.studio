@@ -1111,12 +1111,12 @@
   line-height: inherit;
 }
 .bootstrap-iso a {
-  color: #337ab7;
+  color: #0277BD;
   text-decoration: none;
 }
 .bootstrap-iso a:hover,
 .bootstrap-iso a:focus {
-  color: #23527c;
+  color: #0277BD;
   text-decoration: underline;
 }
 .bootstrap-iso a:focus {
@@ -3233,8 +3233,8 @@
 }
 .bootstrap-iso .btn-success {
   color: #ffffff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #0277BD;
+  border-color: #0277BD;
 }
 .bootstrap-iso .btn-success:hover,
 .bootstrap-iso .btn-success:focus,

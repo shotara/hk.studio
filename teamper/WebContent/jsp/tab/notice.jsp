@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site Template</title>
+<title>Teamper - Notice</title>
 <!-- Bootstrap core CSS & JavaScript -->
 <jsp:include page="../header.jsp" flush="false" />
 </head>

@@ -18,6 +18,17 @@
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/theme.css" rel="stylesheet">
 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js link -->
+<script>
+    $(document).ready(function() {
+        $('#myCarousel').carousel('cycle');
+        $('#myCarousel2').carousel('cycle');
+    });
+</script>
+
 <script src="/js/teamper.team.js"></script>
 <script src="/js/teamper.member.js"></script>
 <script src="/js/6-03.js"></script>
@@ -43,7 +54,7 @@
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 
-				<li class="active"><a href="/jsp/team/teamView.jsp">Team</a></li>
+				<li><a href="/jsp/team/teamView.jsp">Team</a></li>
 				<li><a href="/jsp/tab/notice.jsp">Notice</a></li>
 			</ul>
 			<c:if test="${empty sessionScope.tpMemberNo}">
@@ -56,16 +67,16 @@
 						<input type="password" placeholder="Password" class="form-control"
 							id="inputMemberPassword">
 					</div>
-					<button type="button" class="btn btn-success"
+					<button type="button" class="btn btn-primary"
 						onclick="Member.login()">Sign in</button>
-					<button type="button" class="btn btn-success"
+					<button type="button" class="btn btn-primary"
 						onclick="location.href='/jsp/member/join.jsp'">join us</button>
 				</form>
 			</c:if>
 			<c:if test="${not empty sessionScope.tpMemberNo}">
 				<form class="navbar-form navbar-right">
 					<div class="form-group">
-						<button type="button" class="btn btn-success"
+						<button type="button" class="btn btn-primary"
 							onclick="Member.LogOut()">Sign Out</button>
 					</div>
 				</form>
