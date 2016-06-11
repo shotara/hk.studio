@@ -70,31 +70,10 @@
      </div>
      <div class="form-group ">
       <label class="control-label " for="name1">
-       Team Bar Detail Name
+ 
       </label>
-      <input class="form-control" id="name1" name="name1" type="text"/>
-     </div>
-     <div class="form-group ">
-      <label class="control-label " for="name2">
-       Team Bar Detail Name
-      </label>
-      <input class="form-control" id="name2" name="name2" type="text"/>
-     </div>
-     <div class="form-group ">
-      <label class="control-label " for="name3">
-       Team Bar Detail Name
-      </label>
-      <input class="form-control" id="name3" name="name3" type="text"/>
-     </div>
-     <div class="form-group ">
-      <label class="control-label " for="name4">
-       Team Bar Detail Name
-      </label>
-      <input class="form-control" id="name4" name="name4" type="text"/>
-     </div>
-     <div class="form-group">
       <div>
-       <button class="btn btn-primary " name="submit" type="submit">
+       <button class="btn btn-primary "  type="button" onclick="Team.AddTeamBarDetail()">
         ¿Ï·á
        </button>
       </div>

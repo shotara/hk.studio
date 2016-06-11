@@ -9,7 +9,7 @@
 
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
-
+<jsp:include page="../header.jsp" flush="false" />
 <title>일감입력</title>
 </head>
 <body>
@@ -48,7 +48,7 @@
      </div>
      <div class="form-group">
       <div>
-       <button class="btn btn-primary " type="button" onclick="Team.AddBar">
+       <button class="btn btn-primary " type="button" onclick="Team.AddTeamBar()">
         완료
        </button>
       </div>

@@ -10,8 +10,9 @@
 <body>
 	<jsp:include page="timetableView.jsp" flush="false" />
 	
-	
-	
+
+
+
 	
 <left><button type="button" class="btn btn-primary" onclick="location.href='/jsp/team/addTeamBar.jsp'">일감 입력하기</button></left>
 

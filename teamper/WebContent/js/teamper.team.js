@@ -47,10 +47,46 @@ Team.AddTeam = function() {
 
 var Team = {};
 
-Team.AddBar = function() {
+Team.AddTeamBar = function() {
 
 	
-	var action = "/team?action=addBar";
+	var action = "/team?action=addTeamBar";
+	var form_data = {
+		inputTeamName :  $("#InputTeamBarName").val(),
+		inputTeamInfo : $("#InputTeamBarSize").val()
+	};
+	
+	$.ajax({
+		type : "POST",
+		url : action,
+		data : form_data,
+		dataType : "json",
+		async: false,
+		success: function(response) {
+			if(response.outputResult == "1") {
+				alert("일감 생성되었습니다..");
+				location.href = "/jsp/team/teamView.jsp";
+				
+			} else if(response.outputResult =="-1") {
+				alert("일감 또는 일감사이즈가 입력되지 않았습니다.");
+			} else {
+				alert("알수없는 문제가 생겼습니다.");
+			}
+
+		}, error: function(xhr,status,error) {
+
+		}
+	});
+
+	return false;
+}
+
+
+
+Team.AddTeamBarDetail = function() {
+
+	
+	var action = "/team?action=addTeamBar";
 	var form_data = {
 		inputTeamName :  $("#InputTeamBarName").val(),
 		inputTeamInfo : $("#InputTeamBarSize").val()
